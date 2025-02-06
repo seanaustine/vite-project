@@ -1,16 +1,17 @@
 import './App.css';
+import { CSSProperties } from 'react';
 
 function Rectangle() {
-  const squareStyle = {
+  const squareStyle: CSSProperties = {
     border: '3px solid black',
-    width: '200px',
-    height: '200px',
+    width: 200,
+    height: 200,
     backgroundColor: 'pink',
-    display: 'flex',  
-    justifyContent: 'center',  
-    alignItems: 'center',  
-    fontSize: '16px',
-    color: 'black'
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 16,
+    color: 'black',
   };
 
   return (
@@ -21,12 +22,12 @@ function Rectangle() {
 }
 
 function Name() {
-  const nameStyle = {
-    textAlign: 'center',
-    fontSize: '20px', 
+  const nameStyle: CSSProperties = {
+    textAlign: 'center' as const,
+    fontSize: 20,
     fontWeight: 'bold',
     color: 'black',
-    marginBottom: '20px',
+    marginBottom: 20,
   };
 
   return (
@@ -37,19 +38,22 @@ function Name() {
 }
 
 function App() {
+  const appStyle: CSSProperties = {
+    position: 'absolute',
+    top: '40%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    width: '100vw',
+    height: '100vh',
+  };
+
   return (
-    <div style={{
-      position: 'absolute',
-      top: '30%',  
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100vw',
-      height: '100vh',
-    }}>
+    <div style={appStyle}>
       <Name />
       <Rectangle />
     </div>
